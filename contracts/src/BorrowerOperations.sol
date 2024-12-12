@@ -204,10 +204,12 @@ contract BorrowerOperations is LiquityBase, AddRemoveManagers, IBorrowerOperatio
         address _removeManager,
         address _receiver
     ) external override returns (uint256) {
+// check the intrese rate this function is here below
         _requireValidAnnualInterestRate(_annualInterestRate);
-
+// get all the the information this is based on other contracts...
         OpenTroveVars memory vars;
 
+// send the information to this function 
         vars.troveId = _openTrove(
             _owner,
             _ownerIndex,
